@@ -42,7 +42,8 @@ public class DishScreen extends JPanel implements ActionListener {
                 public void actionPerformed(ActionEvent e)
                 //opens restaurant window with jbuttons from "home" screen
                 {
-                    DishPopUp popUp = new DishPopUp(element.get(0), element.get(1), element.get(2), element.get(3));
+                    DishPopUp popUp = new DishPopUp(element.get(0), element.get(1), element.get(2), element.get(3),
+                            element.get(4), element.get(5));
                     DishScreen.this.add(popUp, "card1");
                     GridBagConstraints c = new GridBagConstraints();
                     JButton backButton = new JButton("Back");

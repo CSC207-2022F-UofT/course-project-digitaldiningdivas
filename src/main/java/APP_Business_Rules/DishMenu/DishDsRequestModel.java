@@ -7,6 +7,7 @@ public class DishDsRequestModel {
     DishDsRequestModel(String name, String resCategory, String menuTitle, String menuDesc){
         this.name = name;
     }
+
     public String getName(){
         return name;
     }

@@ -18,7 +18,8 @@ public class DishInteractor implements DishInputBoundary{
     }
     @Override
     public DishResponseModel create(DishRequestModel requestModel) {
-        Dish dish = dishFactory.create(requestModel.getDishName(), requestModel.getDishCategory());
+        Dish dish = dishFactory.create(requestModel.getDishName(), requestModel.getDishCategory(),
+                requestModel.getRestaurant(), requestModel.getDescription(), requestModel.getPrice());
         DishResponseModel dishResponseModel = new DishResponseModel(dish.getName());
         return dishPresenter.prepareSuccessView(dishResponseModel);
     }

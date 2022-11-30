@@ -1,7 +1,5 @@
 package APP_Business_Rules.DishMenu;
 
-import APP_Business_Rules.RestaurantUseCase.RestaurantFileReader;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -46,7 +44,7 @@ public class DishFileReader implements DishDataAccess{
     }
     @Override
     public List<List<String>> getDish(String file){
-        RestaurantFileReader fileReader = new RestaurantFileReader(file);
+        DishFileReader fileReader = new DishFileReader(file);
         return fileReader.createList();
     }
 
@@ -54,4 +52,5 @@ public class DishFileReader implements DishDataAccess{
     public boolean dishExistsByName(String identifier){
         return dishes.equals(identifier);
     }
+
 }

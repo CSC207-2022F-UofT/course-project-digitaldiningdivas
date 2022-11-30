@@ -6,11 +6,11 @@ public class DishResponseModel {
         this.dish = dish;
     }
 
-    public String getRestaurant(){
+    public String getDish(){
         return dish;
     }
 
-    public void setRestaurant(String dish) {
+    public void setDish(String dish) {
         this.dish = dish;
     }
 }
