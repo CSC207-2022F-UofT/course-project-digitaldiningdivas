@@ -1,9 +1,9 @@
-package Interface_and_Adapters;
+package Interface_and_Adapters.Ranking;
 
 import APP_Business_Rules.Ranking;
 import APP_Business_Rules.RankingPresenter;
 
-public class RankingController implements RankingInputBoundary{
+public class RankingController implements RankingInputBoundary {
 
     final RankingDSGateway rankingDSGateway;
     final RankingPresenter rankingPresenter;

@@ -1,12 +1,16 @@
 package Interface_and_Adapters;
 
-import APP_Business_Rules.RestaurantUseCase.*;
-import APP_Business_Rules.RestaurantUseCase.RestaurantFormatted;
+import APP_Business_Rules.DishMenu.*;
+import Interface_and_Adapters.DishMenuScreens.DishController;
+import Interface_and_Adapters.DishMenuScreens.DishFormatted;
+import Interface_and_Adapters.DishMenuScreens.DishPresenter;
+import Interface_and_Adapters.DishMenuScreens.DishScreen;
+import Interface_and_Adapters.Ranking.RankingScreen;
 
 import javax.swing.*;
 import java.io.IOException;
 
-public class Main {
+public class DishMenuMain {
 
     public static void main(String[] args) throws IOException {
         /*
@@ -17,25 +21,25 @@ public class Main {
         JFrame frame = new JFrame("Digital Dining Divas");
         JTabbedPane tabs = new JTabbedPane();
 
-        RestaurantDataAccess res;
-        res = new RestaurantFileReader("src/main/java/Frameworks_and_Drivers/Restaurant.csv");
+        DishDataAccess dish;
+        dish = new DishFileReader("src/main/java/Frameworks_and_Drivers/Dish.csv");
 
 
-        RestaurantPresenter presenter = new RestaurantFormatted();
-        RestaurantFactory restaurantFactory = new RestaurantFactory();
-        RestaurantInputBoundary interactor = new RestaurantInteractor(
-               res, presenter, restaurantFactory);
-        RestaurantController restaurantController = new RestaurantController(
+        DishPresenter presenter = new DishFormatted();
+        DishFactory dishFactory = new DishFactory();
+        DishInputBoundary interactor = new DishInteractor(
+               dish, presenter, dishFactory);
+        DishController dishController = new DishController(
                 interactor);
 
-        RestaurantScreen restaurantScreen = new RestaurantScreen(restaurantController);
+        DishScreen dishScreen = new DishScreen(dishController);
 
         AnalyticsScreen analyticsScreen = new AnalyticsScreen();
         RankingScreen rankingScreen = new RankingScreen();
 
 
         //adds windows with labels to tab layout. This is an example of what a Restaurant Owner would see.
-        tabs.addTab("Restaurant", restaurantScreen);
+        tabs.addTab("Dishes", dishScreen);
         tabs.addTab("Rankings", rankingScreen);
         tabs.addTab("Analytics", analyticsScreen);
 

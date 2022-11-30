@@ -1,4 +1,4 @@
-package Interface_and_Adapters;
+package Interface_and_Adapters.Ranking;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
