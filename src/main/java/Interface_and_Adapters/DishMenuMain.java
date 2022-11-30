@@ -16,8 +16,6 @@ public class DishMenuMain {
         /*
         Adds screens to a JTabbedPane.
          */
-
-
         JFrame frame = new JFrame("Digital Dining Divas");
         JTabbedPane tabs = new JTabbedPane();
 

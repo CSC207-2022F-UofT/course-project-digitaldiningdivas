@@ -1,8 +1,8 @@
-Name,Restaurant,Rating,Description,Category,Price
-Sikil Pak,Quetzal,8,Pumpkin seed with roasted poblano and cotijia,Appetizer,23
-Newfoundland Scallops,Quetzal,7,In the shell with ramp butter and sea asparagus with morita chili,Entree,38
-Octopus,Quetzal,9,Salsa macha and corn miso butter with charred brussel sprout leaves,Entree,44
-Il Carpaccio,Don Alfonso,10,Ontario Wagyu beef tenderloin with Dijon mustard sauce and balsamic vinegar caviar,Entree,32
-L'Insalata Caprese,Don Alfonso,7,Cherry tomato and burrata D'Andria with arugala and oregano or pesto,Entree,28
-East Coast Oysters,Alobar,8,Citrus and tobasco,Entree,26
-Chilled Lobster,Alobar,9,Gem lettuce with lime aioli,Entree,40
+Restaurant,Name,Rating,Description,Category,Price
+Quetzal,Sikil Pak,8,Pumpkin seed with roasted poblano and cotijia,Appetizer,23
+Quetzal,Newfoundland Scallops,7,In the shell with ramp butter and sea asparagus with morita chili,Entree,38
+Quetzal,Octopus,9,Salsa macha and corn miso butter with charred brussel sprout leaves,Entree,44
+Don Alfonso,Il Carpaccio,10,Ontario Wagyu beef tenderloin with Dijon mustard sauce and balsamic vinegar caviar,Entree,32
+Don Alfonso,L'Insalata Caprese,7,Cherry tomato and burrata D'Andria with arugala and oregano or pesto,Entree,28
+Alobar,East Coast Oysters,8,Citrus and tobasco,Entree,26
+Alobar,Chilled Lobster,9,Gem lettuce with lime aioli,Entree,40
