@@ -20,7 +20,8 @@ public class DishFileReader implements DishDataAccess{
     }
 
     public HashMap<String, List<List<String>>> createList() {
-        //returns dishes as list of lists
+        //returns dishes as a Hashmap of Restaurant strings to a list of values, values are lists of strings
+        //corresponding to attributes of dishes
 
         String line = "";
         String splitBy = ",";
@@ -30,16 +31,6 @@ public class DishFileReader implements DishDataAccess{
             br.readLine(); // skip header
             while ((line = br.readLine()) != null)   //returns a Boolean value
             {
-                /*
-                String[] dish = line.split(splitBy);
-                List<String> listPiece = new ArrayList<>(dish.length);
-                for(String element : dish)
-                {
-                    listPiece.add(element);
-                }
-                dishes.add(listPiece);
-
-                 */
                 String[] dish = line.split(splitBy);
                 String key = dish[0];
 

@@ -28,6 +28,14 @@ public class DishPopUp extends JPanel implements ActionListener {
         c.gridy = 1;
         this.add(rating, c);
         c = new GridBagConstraints();
+        JLabel dishPrice = new JLabel("Price: $" + price);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.weighty = 1.0;
+        c.gridx = 4;
+        c.gridy = 0;
+        this.add(dishPrice, c);
+        c = new GridBagConstraints();
         JLabel dishDescription = new JLabel("Description: "+ description);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
@@ -35,6 +43,14 @@ public class DishPopUp extends JPanel implements ActionListener {
         c.gridx = 2;
         c.gridy = 1;
         this.add(dishDescription, c);
+        c = new GridBagConstraints();
+        JLabel dishCategory = new JLabel("Category: " + category);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.weighty = 1.0;
+        c.gridx = 3;
+        c.gridy = 0;
+        this.add(dishCategory, c);
 
         this.setVisible(true);
     }
