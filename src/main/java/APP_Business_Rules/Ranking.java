@@ -1,6 +1,6 @@
 package APP_Business_Rules;
 
-import entities.Account;
+import Entities.Account;
 import java.util.Arrays;
 
 public class Ranking implements RankingPresenter {

@@ -1,0 +1,14 @@
+package Entities;
+
+public interface User {
+    public String getUserName();
+
+    public String getPassword();
+
+    public boolean validPassword();
+
+    public String getCreatedOn();
+
+    public boolean confirmPassword(String pass);
+
+}

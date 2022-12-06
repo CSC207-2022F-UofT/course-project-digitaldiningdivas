@@ -1,6 +1,6 @@
 package APP_Business_Rules;
 
-import APP_Business_Rules.search_use_case.SearchResponseModel;
+import APP_Business_Rules.SearchUseCase.SearchResponseModel;
 
 public interface OutputBoundary {
     void update(SearchResponseModel searchResponseModel);
