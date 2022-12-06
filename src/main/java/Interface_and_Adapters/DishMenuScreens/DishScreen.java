@@ -8,14 +8,20 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.util.List;
 
+/**
+ * The dish screen class that formats and displays dish information to the UI.
+ */
 public class DishScreen extends JPanel implements ActionListener {
 
     DishController dishController;
 
-    public DishScreen(DishController dishController) throws IOException {
+    /**
+     * The constructor for the DishScreen when activated.
+     * @param dishController: The given controller for the instantiation of the DishScreen.
+     */
+    public DishScreen(DishController dishController) {
         CardLayout cards = new CardLayout();
         this.setLayout(cards);
         JPanel subPanel = new JPanel(); //panel for button grid
@@ -29,10 +35,10 @@ public class DishScreen extends JPanel implements ActionListener {
         this.dishController = dishController;
 
         DishDataAccess dishes;
-        dishes = new DishFileReader("src/main/java/Frameworks_and_Drivers/Dishes.csv");
+        dishes = new DishFileReader("Dishes.csv");
 
-        for(String key: dishes.getDish("src/main/java/Frameworks_and_Drivers/Dishes.csv").keySet()){
-            List<List<String>> dishList = dishes.getDish("src/main/java/Frameworks_and_Drivers/Dishes." +
+        for(String key: dishes.getDish("Dishes.csv").keySet()){
+            List<List<String>> dishList = dishes.getDish("Dishes." +
                     "csv").get(key);
             for (List<String> element : dishList) {
                 JButton button = new JButton(element.get(0) + " (" + key + ")");
@@ -72,6 +78,11 @@ public class DishScreen extends JPanel implements ActionListener {
 
 
     }
+
+    /**
+     * A method for when an action is performed within the menu.
+     * @param evt the event to be processed
+     */
     public void actionPerformed(ActionEvent evt) {
         System.out.println("Click " + evt.getActionCommand());
     }
