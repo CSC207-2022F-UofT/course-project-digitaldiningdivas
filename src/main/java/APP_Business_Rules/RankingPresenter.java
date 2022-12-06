@@ -1,6 +1,6 @@
 package APP_Business_Rules;
 
-import Entities.Account;
+import entities.Account;
 
 public interface RankingPresenter {
     Account[] returnUsersSorted(Account[] list);

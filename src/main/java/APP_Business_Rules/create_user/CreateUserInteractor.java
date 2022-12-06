@@ -1,8 +1,8 @@
 package APP_Business_Rules.create_user;
 
 
-import Entities.User;
-import Entities.UserFactory;
+import entities.User;
+import entities.UserFactory;
 
 public class CreateUserInteractor implements CreateUserInputBoundary {
 

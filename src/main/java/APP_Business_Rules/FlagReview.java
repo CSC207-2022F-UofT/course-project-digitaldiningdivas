@@ -1,8 +1,8 @@
 package APP_Business_Rules;
 
-import Entities.Account;
-import Entities.FlaggedReview;
-import Entities.Review;
+import entities.Account;
+import entities.FlaggedReview;
+import entities.Review;
 
 public class FlagReview {
 

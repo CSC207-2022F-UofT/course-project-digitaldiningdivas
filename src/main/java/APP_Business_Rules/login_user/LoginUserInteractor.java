@@ -1,7 +1,7 @@
 package APP_Business_Rules.login_user;
 
-import Entities.Loggable;
-import Entities.UserFactory;
+import entities.Loggable;
+import entities.UserFactory;
 
 public class LoginUserInteractor implements LoginUserInputBoundary {
 
