@@ -1,0 +1,16 @@
+1) Factory Design Pattern
+We used the factory design pattern in the user class to instantiate Users. This is done by creating a User interface to
+allow for different types of Users like account user and restaurant owner. As well, we implement a class that acts as
+a factory in the create_user package. This factory is used to keep abstractions common and rely less directly on a
+single class, other user types can be added using the interface and factory. This decouples the creation from concrete
+classes like account user and restaurant owner. As well, a factory is also implemented in RestaurantUseCase to create
+restaurant objects.
+
+2) Observer Pattern
+
+
+3) Facade Design Pattern
+Within the create_user a facade is implemented within the interactor to connect to the various functions and classes,
+including the gateways and presenters, to allow for a simpler interaction between the classes, use cases, and layers
+of architecture. This facade design pattern is also implemented in other interactors such as the dish interactor, where
+it is used to gather and use various classes in one convenient spot to allow simpler interaction.
