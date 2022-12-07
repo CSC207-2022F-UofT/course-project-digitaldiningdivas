@@ -62,7 +62,6 @@ public class DishPopUp extends JPanel implements ActionListener {
         c.gridx = 3;
         c.gridy = 0;
         this.add(dishCategory, c);
-
         this.setVisible(true);
     }
 

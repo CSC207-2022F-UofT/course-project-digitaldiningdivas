@@ -24,6 +24,7 @@ public class DishScreen extends JPanel implements ActionListener {
     public DishScreen(DishController dishController) {
         CardLayout cards = new CardLayout();
         this.setLayout(cards);
+
         JPanel subPanel = new JPanel(); //panel for button grid
 
         subPanel.setLayout(new GridLayout(0, 1, 10, 10));
