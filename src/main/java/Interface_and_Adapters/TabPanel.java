@@ -33,7 +33,7 @@ public class TabPanel extends JPanel{
         RestaurantDataAccess res;
         res = new RestaurantFileReader("src/main/java/Frameworks_and_Drivers/Restaurant.csv");
 
-        DishDataAccess dish = new DishFileReader("src/main/java/Frameworks_and_Drivers/Dishes.csv");
+        DishDataAccess dish = new DishFileReader("Dishes.csv");
 
 
         RestaurantPresenter presenter = new RestaurantFormatted();

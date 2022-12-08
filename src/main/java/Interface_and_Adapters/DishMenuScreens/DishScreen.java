@@ -30,10 +30,10 @@ public class DishScreen extends JPanel implements ActionListener {
         this.dishController = dishController;
 
         DishDataAccess dishes;
-        dishes = new DishFileReader("src/main/java/Frameworks_and_Drivers/Dishes.csv");
+        dishes = new DishFileReader("Dishes.csv");
 
-        for(String key: dishes.getDish("src/main/java/Frameworks_and_Drivers/Dishes.csv").keySet()){
-            List<List<String>> dishList = dishes.getDish("src/main/java/Frameworks_and_Drivers/Dishes." +
+        for(String key: dishes.getDish("Dishes.csv").keySet()){
+            List<List<String>> dishList = dishes.getDish("Dishes." +
                     "csv").get(key);
             for (List<String> element : dishList) {
                 JButton button = new JButton(element.get(0) + " (" + key + ")");
