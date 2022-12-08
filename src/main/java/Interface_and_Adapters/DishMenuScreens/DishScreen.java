@@ -15,9 +15,12 @@ public class DishScreen extends JPanel implements ActionListener {
 
     DishController dishController;
 
-    public DishScreen(DishController dishController) throws IOException {
+    public DishScreen(DishController dishController, String account) throws IOException {
         CardLayout cards = new CardLayout();
         this.setLayout(cards);
+
+        JPanel outerPanel = new JPanel();
+        outerPanel.setLayout(new CardLayout());
 
         JPanel subPanel = new JPanel(); //panel for button grid
 
@@ -46,7 +49,7 @@ public class DishScreen extends JPanel implements ActionListener {
                     //opens restaurant window with jbuttons from "home" screen
                     {
                         DishPopUp popUp = new DishPopUp(element.get(0), element.get(1), element.get(2), element.get(3),
-                                element.get(4));
+                                element.get(4), DishScreen.this, account);
                         DishScreen.this.add(popUp, "card1");
                         GridBagConstraints c = new GridBagConstraints();
                         JButton backButton = new JButton("Back");

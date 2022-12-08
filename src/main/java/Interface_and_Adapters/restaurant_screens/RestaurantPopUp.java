@@ -89,10 +89,11 @@ public class RestaurantPopUp extends JPanel{
                 DisplayReviewsPresenter disRev = new DisplayReviewsFormatted();
                 DisplayReviewsInputBoundary inBoundRev = new DisplayReviewsInteractor(revGate, disRev);
                 DisplayReviewsController disRevController = new DisplayReviewsController(inBoundRev);
-                DisplayReviewsScreenNew seeReviews = new DisplayReviewsScreenNew(disRevController,
+                DisplayReviewsScreen seeReviews = new DisplayReviewsScreen(disRevController,
                         mainPanel, resName);
                 mainPanel.add(seeReviews, "seeReviews");
-                switchPanel(mainPanel, "seeReviews");
+                CardLayout card = (CardLayout) (mainPanel.getLayout());
+                card.show(mainPanel, "seeReviews");
 
             }
         });
@@ -107,10 +108,11 @@ public class RestaurantPopUp extends JPanel{
                 CreateReviewPresenter disRev = new CreateReviewFormatted();
                 CreateReviewInputBoundary inBoundRev = new CreateReviewInteractor(revGate, disRev);
                 CreateReviewController disRevController = new CreateReviewController(inBoundRev);
-                CreateReviewScreenNew writeReview = new CreateReviewScreenNew(disRevController,
+                CreateReviewScreen writeReview = new CreateReviewScreen(disRevController,
                         mainPanel, account, resName);
                 mainPanel.add(writeReview, "writeReview");
-                switchPanel(mainPanel, "writeReview");
+                CardLayout card = (CardLayout) (mainPanel.getLayout());
+                card.show(mainPanel, "writeReview");
 
             }
         });
