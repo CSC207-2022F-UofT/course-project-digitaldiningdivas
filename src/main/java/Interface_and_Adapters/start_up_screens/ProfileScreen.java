@@ -41,7 +41,7 @@ public class ProfileScreen extends JPanel  {
         String user = account.getUsername();
 
 
-        btn = new JButton("ChangeBio");
+        btn = new JButton("Change Bio");
 
         backbtn = new JButton("Log Out");
 
@@ -86,7 +86,7 @@ public class ProfileScreen extends JPanel  {
 
 
         JList<String> list = new JList<>(mylist);
-        list.setFont(new Font("Arial", Font.BOLD,20));
+        list.setFont(new Font("Arial", Font.BOLD,40));
         list.setSize(100, 500);
 
 
