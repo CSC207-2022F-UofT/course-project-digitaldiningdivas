@@ -16,7 +16,6 @@ public class RestaurantScreen extends JPanel {
      */
     RestaurantController restaurantController;
     String account;
-
     public RestaurantScreen(RestaurantController restaurantController, String account) {
         this.restaurantController = restaurantController;
         this.account = account;

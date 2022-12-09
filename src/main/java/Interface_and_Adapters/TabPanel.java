@@ -10,10 +10,9 @@ import Interface_and_Adapters.restaurant_screens.*;
 
 
 import APP_Business_Rules.login_user.LoginUserResponseModel;
-import Interface_and_Adapters.*;
 import Interface_and_Adapters.DishMenuScreens.DishController;
 import Interface_and_Adapters.DishMenuScreens.DishFormatted;
-import Interface_and_Adapters.DishMenuScreens.DishPresenter;
+import APP_Business_Rules.DishMenu.DishPresenter;
 import Interface_and_Adapters.DishMenuScreens.DishScreen;
 
 import javax.swing.*;
@@ -55,7 +54,7 @@ public class TabPanel extends JPanel{
 
        
         RestaurantScreen restaurantScreen = new RestaurantScreen(restaurantController, account.getUsername());
-        DishScreen dishScreen = new DishScreen(dishController);
+        DishScreen dishScreen = new DishScreen(dishController, account.getUsername());
 
 //        AnalyticsScreen analyticsScreen = new AnalyticsScreen();
 //        RankingScreen rankingScreen = new RankingScreen();

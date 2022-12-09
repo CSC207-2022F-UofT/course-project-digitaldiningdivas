@@ -66,7 +66,8 @@ public class ReviewFile implements CreateReviewGateway, DisplayReviewsGateway {
         }
         else{
             dataGate.storeData(this.filePath, reviewData);
-            return null;
+            List<Review> noReviews = new ArrayList<Review>();
+            return noReviews;
         }
     }
 }
