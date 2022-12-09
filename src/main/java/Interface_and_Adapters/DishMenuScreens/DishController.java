@@ -14,19 +14,20 @@ public class DishController {
 
     /**
      * Constructor for the controller object.
+     *
      * @param dishGateway: the given gateway for the controller.
      */
-    public DishController(DishInputBoundary dishGateway){
+    public DishController(DishInputBoundary dishGateway) {
         this.userInput = dishGateway;
     }
 
     /**
      * Creating a DishResponseModel for the dish
+     *
      * @param requestModel: The given DishRequestModel for the response model
      * @return a DishResponseModel based on the given requestModel.
      */
-    DishResponseModel create(DishRequestModel requestModel){
-    public DishResponseModel create(DishRequestModel requestModel){
+    public DishResponseModel create(DishRequestModel requestModel) {
         return userInput.create(requestModel);
     }
 }

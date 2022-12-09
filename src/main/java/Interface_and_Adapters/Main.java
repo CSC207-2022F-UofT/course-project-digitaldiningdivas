@@ -3,6 +3,7 @@ package Interface_and_Adapters;
 
 import APP_Business_Rules.create_user.*;
 
+import APP_Business_Rules.login_user.LoginUserResponseModel;
 import Entities.AccountFactory;
 import Entities.UserFactory;
 import Frameworks_and_Drivers.UserFile;
@@ -13,6 +14,7 @@ import java.awt.*;
 
 
 public class Main extends JFrame{
+    private LoginUserResponseModel account;
 
     public Main() {
         CreateUserGateway user;
@@ -22,6 +24,7 @@ public class Main extends JFrame{
         CreateUserInputBoundary interactor = new CreateUserInteractor(
                 user, userFactory, presenter);
         CreateUserController controller = new CreateUserController(interactor);
+
         //
 
         this.setTitle("Digital Dining Divas");
@@ -46,5 +49,9 @@ public class Main extends JFrame{
     public static void main(String[] args) {
         new Main().setVisible(true);
 
+    }
+
+    public void setAccount(LoginUserResponseModel account) {
+        this.account = account;
     }
 }

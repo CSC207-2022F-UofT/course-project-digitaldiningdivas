@@ -31,7 +31,7 @@ public class SearchDishInteractor implements SearchInputBoundary{
      * @return
      */
     public SearchResponseModel Search(SearchRequestModel searchRequestModel){
-        List<List<List<String>>> data = new ArrayList<>(dataAccess.getDish("src/main/java/Frameworks_and_Drivers/Dishes.csv").values()); //Might need to change the return type of accessData() to Arraylist<Object>
+        List<List<List<String>>> data = new ArrayList<>(dataAccess.getDish("Dishes.csv").values()); //Might need to change the return type of accessData() to Arraylist<Object>
         SearchResponseModel searchResponseModel = new SearchResponseModel(new ArrayList<>(), "Dish");
         for (List<List<String>> m: data){
             for(List<String> d : m) {

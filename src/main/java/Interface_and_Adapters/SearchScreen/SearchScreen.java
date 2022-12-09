@@ -1,5 +1,19 @@
 package Interface_and_Adapters.SearchScreen;
+import APP_Business_Rules.DisplayReviewsUseCase.DisplayReviewsGateway;
+import APP_Business_Rules.DisplayReviewsUseCase.DisplayReviewsInputBoundary;
+import APP_Business_Rules.DisplayReviewsUseCase.DisplayReviewsInteractor;
+import APP_Business_Rules.login_user.LoginUserResponseModel;
+import Entities.Restaurant;
+import Frameworks_and_Drivers.ReviewFile;
+import Interface_and_Adapters.DishMenuScreens.DishPopUp;
+import Interface_and_Adapters.DishMenuScreens.DishScreen;
+import Interface_and_Adapters.DisplayReviewsScreen.DisplayReviewsController;
+import Interface_and_Adapters.DisplayReviewsScreen.DisplayReviewsFormatted;
+import Interface_and_Adapters.DisplayReviewsScreen.DisplayReviewsPresenter;
+import Interface_and_Adapters.DisplayReviewsScreen.DisplayReviewsScreen;
 import Interface_and_Adapters.UI;
+import Interface_and_Adapters.restaurant_screens.RestaurantController;
+import Interface_and_Adapters.restaurant_screens.RestaurantPopUp;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -12,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchScreen implements UI {
-    String[] header = {"Name", "Category", "Address", "Rating"};
+    String[] header = {"Name", "Category", "Address", "Rating", "Price"};
     private JTabbedPane tabbedPane;
     private JPanel ResearchPanel;
     private JPanel Restaurant;
@@ -33,10 +47,12 @@ public class SearchScreen implements UI {
     private JSpinner dishRatingSpinner;
     private JLabel dishCategoryLabel;
     private JLabel dishRatingLabel;
+    private JScrollPane restaurantTableScrollPane;
+    private JScrollPane dishTableScrollPane;
     private String currentUser; //Variable that represents current user
     private SearchController searchController;
 
-    public SearchScreen(SearchController searchController, JPanel mainPanel, JPanel reviewPanel) {
+    public SearchScreen(SearchController searchController, JPanel mainPanel, String account, RestaurantController restaurantController) {
         this.searchController = searchController;
 
         //Show the search panel
@@ -65,7 +81,10 @@ public class SearchScreen implements UI {
             public void valueChanged(ListSelectionEvent e) {
                 int rowIndex = restaurantTable.getSelectedRow();
                 if (rowIndex != -1) {
-                    //switch to review panel
+                    RestaurantPopUp popUp = new RestaurantPopUp((String) restaurantTable.getValueAt(rowIndex,0), (String) restaurantTable.getValueAt(rowIndex,1),
+                            (String) restaurantTable.getValueAt(rowIndex,2), (String) restaurantTable.getValueAt(rowIndex,3), account, restaurantController, mainPanel);
+                    mainPanel.add(popUp, "card1");
+                    switchPanel(mainPanel, "card1");
                 }
             }
         });
@@ -76,7 +95,22 @@ public class SearchScreen implements UI {
             public void valueChanged(ListSelectionEvent e) {
                 int rowIndex = dishTable.getSelectedRow();
                 if (rowIndex != -1) {
-                    //switch to review panel
+                    //opens restaurant window with jbuttons from "home" screen
+                    DishPopUp popUp = new DishPopUp((String) dishTable.getValueAt(rowIndex, 0), (String) dishTable.getValueAt(rowIndex, 1), (String) dishTable.getValueAt(rowIndex, 2), (String) dishTable.getValueAt(rowIndex, 3),
+                            (String) dishTable.getValueAt(rowIndex, 4), mainPanel, account);
+                    mainPanel.add(popUp, "card1");
+                    JButton backButton = new JButton("Back");
+                    popUp.add(backButton);
+                    backButton.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            switchPanel(mainPanel, "FOURTH"); //returns to first screen by button click
+                        }
+
+                    });
+                    switchPanel(mainPanel, "card1");
+
+
                 }
             }
         });
@@ -129,6 +163,11 @@ public class SearchScreen implements UI {
 
     public JPanel getResearchPanel() {
         return ResearchPanel;
+    }
+
+    public void switchPanel(Container container, String panelName) {
+        CardLayout card = (CardLayout) (container.getLayout());
+        card.show(container, panelName);
     }
 
     {

@@ -31,7 +31,7 @@ public class DisplayReviewsScreen extends JPanel implements ActionListener {
         backButton.addActionListener(new ActionListener() { //button brings user back into RestaurantScreen
             @Override
             public void actionPerformed(ActionEvent e) {
-                DisplayReviewsScreen.this.switchPanel(mainPanel, "card1"); //returns to first screen by button click
+                DisplayReviewsScreen.this.switchPanel(mainPanel, "FOURTH"); //returns to first screen by button click
             }
 
         });

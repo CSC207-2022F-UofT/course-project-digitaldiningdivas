@@ -36,8 +36,8 @@ public class DishPopUp extends JPanel implements ActionListener {
      * @param mainPanel: the main panel in the jframe
      * @param account: The account currently logged in
      */
-    DishPopUp(String dishName, String starRating, String description, String category,
-              String price, JPanel mainPanel, String account){
+    public DishPopUp(String dishName, String starRating, String description, String category,
+                     String price, JPanel mainPanel, String account){
         this.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         JLabel name = new JLabel(dishName);

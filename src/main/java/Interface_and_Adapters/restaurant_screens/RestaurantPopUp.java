@@ -22,8 +22,8 @@ public class RestaurantPopUp extends JPanel{
      */
     RestaurantController restaurantController;
 
-    RestaurantPopUp(String resName, String resCategory, String address, String starRating,
-                    String account, RestaurantController restaurantController, JPanel mainPanel){
+    public RestaurantPopUp(String resName, String resCategory, String address, String starRating,
+                           String account, RestaurantController restaurantController, JPanel mainPanel){
         this.restaurantController = restaurantController;
 
 

@@ -13,12 +13,12 @@ import static java.lang.Integer.parseInt;
 
 class SearchInteractorTest {
     RestaurantFileReader restaurantFileReader = new RestaurantFileReader("Restaurant.csv");
-    DishFileReader dishFileReader = new DishFileReader("Frameworks_and_Drivers/Dishes.csv");
+    DishFileReader dishFileReader = new DishFileReader("src/Dishes.csv");
     SearchPresenter searchPresenter = new SearchPresenter();
     SearchRestaurantInteractor searchRestaurantInteractor = new SearchRestaurantInteractor(searchPresenter, restaurantFileReader);
     SearchDishInteractor searchDishInteractor = new SearchDishInteractor(searchPresenter, dishFileReader);
     SearchController searchController = new SearchController(searchRestaurantInteractor, searchDishInteractor);
-    SearchScreen searchScreen = new SearchScreen(searchController,null,null);
+    SearchScreen searchScreen = new SearchScreen(searchController,null, null, null);
     @Test
     void dishSearch() {
         searchPresenter.setView(searchScreen);
