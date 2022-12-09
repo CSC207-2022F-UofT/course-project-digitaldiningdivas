@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchScreen implements UI {
-    String[] header = { "Name", "Category", "Address", "Rating" };
+    String[] header = {"Name", "Category", "Address", "Rating"};
     private JTabbedPane tabbedPane;
     private JPanel ResearchPanel;
     private JPanel Restaurant;
@@ -36,7 +36,7 @@ public class SearchScreen implements UI {
     private String currentUser; //Variable that represents current user
     private SearchController searchController;
 
-    public SearchScreen(SearchController searchController, JPanel mainPanel, JPanel reviewPanel){
+    public SearchScreen(SearchController searchController, JPanel mainPanel, JPanel reviewPanel) {
         this.searchController = searchController;
 
         //Show the search panel
@@ -44,14 +44,14 @@ public class SearchScreen implements UI {
         card.show(ResearchPanel, "appCard");
 
         //Search buttons listeners
-        dishSearchButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
+        dishSearchButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
                 searchController.Search(dishSearchTextField.getText(), "Dish", (String) dishCategoryComboBox.getSelectedItem(), (int) dishRatingSpinner.getValue());
             }
         });
 
-        restaurantSearchButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
+        restaurantSearchButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
                 searchController.Search(restaurantSearchTextField.getText(), "Restaurant", (String) restaurantCategoryComboBox.getSelectedItem(), (int) restaurantRatingSpinner.getValue());
             }
         });
@@ -64,7 +64,7 @@ public class SearchScreen implements UI {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 int rowIndex = restaurantTable.getSelectedRow();
-                if(rowIndex != -1){
+                if (rowIndex != -1) {
                     //switch to review panel
                 }
             }
@@ -75,7 +75,7 @@ public class SearchScreen implements UI {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 int rowIndex = dishTable.getSelectedRow();
-                if(rowIndex != -1){
+                if (rowIndex != -1) {
                     //switch to review panel
                 }
             }
@@ -83,18 +83,18 @@ public class SearchScreen implements UI {
     }
 
     //Set up the category items
-    public void setUpCategories(){
+    public void setUpCategories() {
         dishCategoryComboBox.addItem("All");
         restaurantCategoryComboBox.addItem("All");
         List<String> record = new ArrayList<>();
-        for (int i = 0; i < restaurantTable.getModel().getRowCount(); i++){
-            if(!record.contains(restaurantTable.getModel().getValueAt(i, 1))){
+        for (int i = 0; i < restaurantTable.getModel().getRowCount(); i++) {
+            if (!record.contains(restaurantTable.getModel().getValueAt(i, 1))) {
                 record.add((String) restaurantTable.getModel().getValueAt(i, 1));
                 restaurantCategoryComboBox.addItem(restaurantTable.getModel().getValueAt(i, 1));
             }
         }
-        for (int i = 0; i < dishTable.getModel().getRowCount(); i++){
-            if(!record.contains(dishTable.getModel().getValueAt(i, 3))){
+        for (int i = 0; i < dishTable.getModel().getRowCount(); i++) {
+            if (!record.contains(dishTable.getModel().getValueAt(i, 3))) {
                 record.add((String) dishTable.getModel().getValueAt(i, 3));
                 dishCategoryComboBox.addItem(dishTable.getModel().getValueAt(i, 3));
             }
@@ -102,10 +102,10 @@ public class SearchScreen implements UI {
     }
 
     //Change the Restaurant table
-    public void updateRestaurantTable(String[][] data){
-        DefaultTableModel model = new DefaultTableModel(header,0);
+    public void updateRestaurantTable(String[][] data) {
+        DefaultTableModel model = new DefaultTableModel(header, 0);
         restaurantTable.setModel(model);
-        for(String[] d: data){
+        for (String[] d : data) {
             model.addRow(d);
         }
     }
@@ -113,21 +113,189 @@ public class SearchScreen implements UI {
     //Change Dish table
     @Override
     public void updateDishTable(String[][] data) {
-        DefaultTableModel model = new DefaultTableModel(header,0);
+        DefaultTableModel model = new DefaultTableModel(header, 0);
         dishTable.setModel(model);
-        for(String[] d: data){
+        for (String[] d : data) {
             model.addRow(d);
         }
     }
 
     //Default Restaurant and dish table
-    public void defaultTable(){
+    public void defaultTable() {
         //Setting up default data displayed of the search tab
-        searchController.Search("", "Restaurant","All",0);
-        searchController.Search("", "Dish","All",0);
+        searchController.Search("", "Restaurant", "All", 0);
+        searchController.Search("", "Dish", "All", 0);
     }
 
     public JPanel getResearchPanel() {
+        return ResearchPanel;
+    }
+
+    {
+// GUI initializer generated by IntelliJ IDEA GUI Designer
+// >>> IMPORTANT!! <<<
+// DO NOT EDIT OR ADD ANY CODE HERE!
+        $$$setupUI$$$();
+    }
+
+    /**
+     * Method generated by IntelliJ IDEA GUI Designer
+     * >>> IMPORTANT!! <<<
+     * DO NOT edit this method OR call it in your code!
+     *
+     * @noinspection ALL
+     */
+    private void $$$setupUI$$$() {
+        ResearchPanel = new JPanel();
+        ResearchPanel.setLayout(new CardLayout(0, 0));
+        tabbedPane = new JTabbedPane();
+        ResearchPanel.add(tabbedPane, "appCard");
+        Restaurant = new JPanel();
+        Restaurant.setLayout(new GridBagLayout());
+        tabbedPane.addTab("Restaurants", Restaurant);
+        restaurantSearchTextField = new JTextField();
+        GridBagConstraints gbc;
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 3.0;
+        gbc.weighty = 1.0;
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        Restaurant.add(restaurantSearchTextField, gbc);
+        restaurantSearchButton = new JButton();
+        restaurantSearchButton.setText("Search");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        Restaurant.add(restaurantSearchButton, gbc);
+        restaurantTable = new JTable();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 3.0;
+        gbc.weighty = 20.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        Restaurant.add(restaurantTable, gbc);
+        restaurantFilters = new JPanel();
+        restaurantFilters.setLayout(new GridBagLayout());
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.fill = GridBagConstraints.BOTH;
+        Restaurant.add(restaurantFilters, gbc);
+        restaurantCategoryComboBox = new JComboBox();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 1.0;
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        restaurantFilters.add(restaurantCategoryComboBox, gbc);
+        restaurantCategoryLabel = new JLabel();
+        restaurantCategoryLabel.setText("Category:");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        gbc.anchor = GridBagConstraints.WEST;
+        restaurantFilters.add(restaurantCategoryLabel, gbc);
+        restaurantRatingLabel = new JLabel();
+        restaurantRatingLabel.setText("Rating:");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.weightx = 1.0;
+        gbc.anchor = GridBagConstraints.WEST;
+        restaurantFilters.add(restaurantRatingLabel, gbc);
+        restaurantRatingSpinner = new JSpinner();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.anchor = GridBagConstraints.NORTHWEST;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        restaurantFilters.add(restaurantRatingSpinner, gbc);
+        Dish = new JPanel();
+        Dish.setLayout(new GridBagLayout());
+        tabbedPane.addTab("Dish", Dish);
+        dishSearchTextField = new JTextField();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 3.0;
+        gbc.weighty = 1.0;
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        Dish.add(dishSearchTextField, gbc);
+        dishSearchButton = new JButton();
+        dishSearchButton.setText("Search");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        Dish.add(dishSearchButton, gbc);
+        dishTable = new JTable();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridheight = 2;
+        gbc.weightx = 3.0;
+        gbc.weighty = 20.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        Dish.add(dishTable, gbc);
+        dishfilters = new JPanel();
+        dishfilters.setLayout(new GridBagLayout());
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.fill = GridBagConstraints.BOTH;
+        Dish.add(dishfilters, gbc);
+        dishCategoryComboBox = new JComboBox();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        dishfilters.add(dishCategoryComboBox, gbc);
+        dishRatingLabel = new JLabel();
+        dishRatingLabel.setText("Rating");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 1.0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        dishfilters.add(dishRatingLabel, gbc);
+        dishRatingSpinner = new JSpinner();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.anchor = GridBagConstraints.NORTHWEST;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        dishfilters.add(dishRatingSpinner, gbc);
+        dishCategoryLabel = new JLabel();
+        dishCategoryLabel.setText("Category");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.weightx = 1.0;
+        gbc.anchor = GridBagConstraints.WEST;
+        Dish.add(dishCategoryLabel, gbc);
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    public JComponent $$$getRootComponent$$$() {
         return ResearchPanel;
     }
 }
