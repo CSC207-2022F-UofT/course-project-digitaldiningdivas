@@ -16,6 +16,10 @@ class DisplayReviewsInteractorTest {
     @Test
     void create() {
         ReviewFile file = new ReviewFile();
+        CreateReviewFormatted createReviewFormatted = new CreateReviewFormatted();
+        CreateReviewInteractor createReviewInteractor = new CreateReviewInteractor(file, createReviewFormatted);
+        CreateReviewController createReviewController = new CreateReviewController(createReviewInteractor);
+        createReviewController.create("John", "Sikil Pak", "nice", 5).CreateReviewResponse();
         DisplayReviewsFormatted response = new DisplayReviewsFormatted();
         DisplayReviewsInteractor interactor = new DisplayReviewsInteractor(file, response);
         DisplayReviewsController controller = new DisplayReviewsController(interactor);
