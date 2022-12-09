@@ -11,10 +11,19 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.List;
 
+
+/**
+ * The dish screen class that formats and displays dish information to the UI.
+ */
 public class DishScreen extends JPanel implements ActionListener {
 
     DishController dishController;
 
+    /**
+     * The constructor for the DishScreen when activated.
+     * @param dishController: The given controller for the instantiation of the DishScreen.
+     * @param account: The account currently logged in
+     */
     public DishScreen(DishController dishController, String account) throws IOException {
         CardLayout cards = new CardLayout();
         this.setLayout(cards);
@@ -76,6 +85,11 @@ public class DishScreen extends JPanel implements ActionListener {
 
 
     }
+
+    /**
+     * A method for when an action is performed within the menu.
+     * @param evt the event to be processed
+     */
     public void actionPerformed(ActionEvent evt) {
         System.out.println("Click " + evt.getActionCommand());
     }
