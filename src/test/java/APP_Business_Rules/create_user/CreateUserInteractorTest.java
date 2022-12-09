@@ -24,7 +24,7 @@ class CreateUserInteractorTest {
     CreateUserInputBoundary interactor = new CreateUserInteractor(
             user, userFactory, presenter);
     CreateUserController controller = new CreateUserController(interactor);
-    String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "x", "y", "z"};
+    String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
 
 
     @Test
