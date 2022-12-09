@@ -37,6 +37,5 @@ class CreateUserInteractorTest {
         }
         CreateUserResponseModel res = controller.create(name, password, password);
         assert user.findAccountUser(name);
-        assert Objects.equals(res.getLogin(), name);
     }
 }
