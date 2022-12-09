@@ -2,8 +2,6 @@ package Interface_and_Adapters.start_up_screens;
 
 
 import APP_Business_Rules.LoadAccountInfo.PullAccountInfoController;
-import APP_Business_Rules.LoadAccountInfo.UserAccountInfoFile;
-import APP_Business_Rules.LoadAccountInfo.UserAccountInfoModel;
 import APP_Business_Rules.login_user.LoginUserResponseModel;
 import Interface_and_Adapters.Main;
 
@@ -15,16 +13,39 @@ import java.awt.event.ActionListener;
 
 public class ProfileScreen extends JPanel  {
 
+    /**
+     * The button that will be used to change Bio.
+     */
     JButton btn;
+
+    /**
+     * A back button.
+     */
 
     JButton backbtn;
 
+    /**
+     * "Profile" Sign.
+     */
+
     JLabel label;
+
+    /**
+     * Label to display username and bio.
+     */
+
 
     JPanel firstpanel = new JPanel();
 
+    /**
+     * First panel to loaded contains profile screen.
+     */
 
     JPanel cont = new JPanel();
+
+    /**
+     * initial layout.
+     */
 
     CardLayout layout = new CardLayout();
 
@@ -55,7 +76,6 @@ public class ProfileScreen extends JPanel  {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
-            //opens restaurant window with jbuttons from "home" screen
             {
                 ChangeBio newscreen = new ChangeBio(account, cont, mainscreen);
                 cont.add(newscreen, "C1");
@@ -68,7 +88,6 @@ public class ProfileScreen extends JPanel  {
         backbtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
-            //opens restaurant window with jbuttons from "home" screen
             {
                 Main main = new Main();
                 main.switchPanel(mainscreen, "FIRST");

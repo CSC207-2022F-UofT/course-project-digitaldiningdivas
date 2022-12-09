@@ -1,12 +1,18 @@
 package APP_Business_Rules.LoadAccountInfo;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class UserAccountInfoModel implements Serializable {
 
+
+    /**
+     * The username chosen by the user.
+     */
     private String username;
 
+    /**
+     * The Bio chosen by the user, It will be blank if they haven't chosen a bio.
+     */
     private String bio = "";
 
     public UserAccountInfoModel(String username){
@@ -14,7 +20,7 @@ public class UserAccountInfoModel implements Serializable {
     }
     /**
      * getUser:
-     * A method that returns the username corresponding to the UserAccountInfoModel
+     * A method that returns the username corresponding to the UserAccountInfoModel.
      *
      * @return The username stored in the UserAccountInfoModel.
      *
@@ -25,7 +31,7 @@ public class UserAccountInfoModel implements Serializable {
     }
     /**
      * getBio:
-     * A method that returns the Bio corresponding to the UserAccountInfoModel
+     * A method that returns the Bio corresponding to the UserAccountInfoModel.
      *
      * @return The Bio stored in the UserAccountInfoModel.
      *
@@ -39,7 +45,7 @@ public class UserAccountInfoModel implements Serializable {
 
     /**
      * changeBio:
-     * A method that changes the stored Bio corresponding to the UserAccountInfoModel
+     * A method that changes the stored Bio corresponding to the UserAccountInfoModel.
      *
      * @param newbio  The new Bio to be  stored in the UserAccountInfoModel.
      *

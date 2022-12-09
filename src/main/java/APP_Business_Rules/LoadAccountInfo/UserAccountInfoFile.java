@@ -1,19 +1,22 @@
 package APP_Business_Rules.LoadAccountInfo;
-import APP_Business_Rules.create_user.CreateUserGatewayModel;
-import APP_Business_Rules.login_user.LoginUserGatewayModel;
+
 
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 public class UserAccountInfoFile implements LoadAccountGateway {
 
+    /**
+     * The CSV file containing UserAccounInfoModels.
+     */
     private final File csvFile;
 
-
+    /**
+     * This Class pulls and manipulates info from the CSV.
+     */
 
     public UserAccountInfoFile(String csvpath) {
 
@@ -38,7 +41,7 @@ public class UserAccountInfoFile implements LoadAccountGateway {
      * findAccountUser:
      * Returns whether a UserAccountInfoModel corresponding to the username has been stored in the csv file.
      *
-     * @param username the username UserAccountInfomodel the will be returned.
+     * @param username the username UserAccountInfomodel will be returned.
      *
      * @return whether there is a UserAccountInfoModel that contains the username.
      *
@@ -70,7 +73,7 @@ public class UserAccountInfoFile implements LoadAccountGateway {
      * load:
      * method that accesses the account csv and load and return the UserAccountInfomodel corresponding to the username.
      *
-     * @param username the username UserAccountInfomodel the will be returned.
+     * @param username the username UserAccountInfomodel will be returned.
      *
      * @return the UserAccountInfomodel  that matches the username.
      *

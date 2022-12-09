@@ -1,10 +1,10 @@
 package APP_Business_Rules.LoadAccountInfo;
 
-import APP_Business_Rules.LoadAccountInfo.UserAccountInfoModel;
-
-;
 
 public interface LoadAccountGateway {
+    /**
+     * This is an interface That used to Load Accounts.
+     */
 
     boolean findAccountUser(String username);
 

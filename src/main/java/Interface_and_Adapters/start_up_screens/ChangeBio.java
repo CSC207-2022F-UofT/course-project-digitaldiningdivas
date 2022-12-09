@@ -1,9 +1,6 @@
 package Interface_and_Adapters.start_up_screens;
 
 import APP_Business_Rules.LoadAccountInfo.ChangeBioController;
-import APP_Business_Rules.LoadAccountInfo.PullAccountInfoController;
-import APP_Business_Rules.LoadAccountInfo.UserAccountInfoFile;
-import APP_Business_Rules.LoadAccountInfo.UserAccountInfoModel;
 import APP_Business_Rules.login_user.LoginUserResponseModel;
 
 import javax.swing.*;
@@ -28,12 +25,8 @@ public class ChangeBio extends JPanel {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
-            //opens restaurant window with jbuttons from "home" screen
             {
                 String newbio = biotextfield.getText();
-//                UserAccountInfoFile file = new UserAccountInfoFile("./AccountInfo.csv");
-//                UserAccountInfoModel model = file.load(account.getUsername());
-//                file.change(model.getUser(), newbio);
                 ChangeBioController controller = new ChangeBioController(account.getUsername(), newbio);
                 controller.UpdateBio();
                 ProfileScreen profile = new ProfileScreen(account, main);
@@ -45,7 +38,6 @@ public class ChangeBio extends JPanel {
         backbutton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
-            //opens restaurant window with jbuttons from "home" screen
             {
                 ProfileScreen profile = new ProfileScreen(account, main);
                 profile.switchPanel(panel, "1");
